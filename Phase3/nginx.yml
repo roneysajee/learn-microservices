@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: my-custom-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx-dns.conf:/home/roney/Projects/local-microservices/nginx-dnsCache.conf:ro
+      # Optional: Mount your static files directory as well
+      # - ./html:/usr/share/nginx/html:ro
